@@ -35,8 +35,8 @@ steps:
           git add .
           git commit -m  "dfgfr"
           git push origin main
-          workingDirectory: $(Agent.TempDirectory)
   displayName: 'Clone Destination Repo and Upload ZIP Archive'
+  ##workingDirectory: $(Agent.TempDirectory)
   
 
 - script: |
