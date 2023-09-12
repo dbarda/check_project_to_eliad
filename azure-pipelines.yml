@@ -30,7 +30,7 @@ steps:
     cd test
     git status
     git add .
-    git commit -m "bla bla"
+    git commit -m "Your commit message here"
     git push origin main
   displayName: 'Clone Destination Repo and Upload ZIP Archive'
   workingDirectory: $(Agent.TempDirectory)
