@@ -27,7 +27,7 @@ steps:
 
 - script: |
     git clone https://github.com/dbarda/Github-artifactory.git
-    //cd destination-repo
+    ##cd destination-repo
     # Additional commands to configure and prepare the destination repo (if needed)
     git add .
     git commit -m "Add ZIP dudu"
