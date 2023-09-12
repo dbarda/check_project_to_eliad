@@ -10,8 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-
-- task: PowerShell@2
+- task: ArchiveFiles@2
   inputs:
-    targetType: 'inline'
-    script: 'git clone https://github.com/dbarda/check_project_to_eliad.git'
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
