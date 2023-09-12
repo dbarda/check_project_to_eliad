@@ -29,7 +29,7 @@ steps:
     git clone https://github.com/dbarda/test.git
     cd test
     git add .
-    git commit -m "Add ZIP dudu"
+    git commit
     git push origin main
   displayName: 'Clone Destination Repo and Upload ZIP Archive'
   workingDirectory: $(Agent.TempDirectory)
