@@ -15,22 +15,22 @@ steps:
 
 - script: |
     # Create a ZIP archive of the cloned contents
-    zip -r myarchive.zip .
+    zip -r dudu.zip .
   displayName: 'Create ZIP Archive'
   workingDirectory: $(Agent.TempDirectory)/check_project_to_eliad
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Agent.TempDirectory)/check_project_to_eliad/myarchive.zip'
+    targetPath: '$(Agent.TempDirectory)/check_project_to_eliad/dudu.zip'
     artifact: 'myartifact'
   displayName: 'Publish Artifact'
 
 - script: |
-    git clone https://github.com/yourusername/destination-repo.git
+    git clone https://github.com/dbarda/check_project_to_eliad.git
     cd destination-repo
     # Additional commands to configure and prepare the destination repo (if needed)
     git add .
-    git commit -m "Add ZIP archive"
+    git commit -m "Add ZIP dudu"
     git push origin main
   displayName: 'Clone Destination Repo and Upload ZIP Archive'
   workingDirectory: $(Agent.TempDirectory)
