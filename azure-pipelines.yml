@@ -35,8 +35,10 @@ steps:
           git add .
           git commit -m  "dfgfr"
           git push origin main
+          git config --global user.email "you@example.com"
+          git config --global user.name "g_dbarda"
   displayName: 'Clone Destination Repo and Upload ZIP Archive'
-  ##workingDirectory: $(Agent.TempDirectory)
+  #workingDirectory: $(Agent.TempDirectory)
   
 
 - script: |
