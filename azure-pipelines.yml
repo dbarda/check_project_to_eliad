@@ -26,9 +26,6 @@ steps:
   displayName: 'Publish Artifact'
 
 - script: |
-    ##git clone https://github.com/dbarda/jenkins.git
-    ##cd destination-repo
-    # Additional commands to configure and prepare the destination repo (if needed)
     git add .
     git commit -m "Add ZIP dudu"
     git push origin main
