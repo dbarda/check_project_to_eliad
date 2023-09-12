@@ -28,6 +28,7 @@ steps:
 - script:
     git clone https://github.com/dbarda/test.git
     cd test
+    git status -verbose
     git add .
     git commit -m "bla bla"
     git push origin main
