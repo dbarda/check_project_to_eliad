@@ -26,8 +26,8 @@ steps:
   displayName: 'Publish Artifact'
 
 - script: |
-    git clone https://github.com/dbarda/check_project_to_eliad.git
-    cd destination-repo
+    git clone https://github.com/dbarda/Github-artifactory.git
+    //cd destination-repo
     # Additional commands to configure and prepare the destination repo (if needed)
     git add .
     git commit -m "Add ZIP dudu"
