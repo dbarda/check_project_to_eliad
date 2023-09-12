@@ -1,19 +1,41 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
-- task: ArchiveFiles@2
+- script: |
+    git clone https://github.com/dbarda/check_project_to_eliad.git
+    cd source-repo
+    git checkout main
+    # Additional commands to prepare the repository (if needed)
+  displayName: 'Clone GitHub Repo'
+  workingDirectory: $(Agent.TempDirectory)
+
+- script: |
+    # Create a ZIP archive of the cloned contents
+    zip -r myarchive.zip .
+  displayName: 'Create ZIP Archive'
+  workingDirectory: $(Agent.TempDirectory)/source-repo
+
+- task: PublishPipelineArtifact@1
   inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
+    targetPath: '$(Agent.TempDirectory)/source-repo/myarchive.zip'
+    artifact: 'myartifact'
+  displayName: 'Publish Artifact'
+
+- script: |
+    git clone https://github.com/dbarda/check_project_to_eliad.git
+    cd destination-repo
+    # Additional commands to configure and prepare the destination repo (if needed)
+    git add .
+    git commit -m "Add ZIP archive"
+    git push origin main
+  displayName: 'Clone Destination Repo and Upload ZIP Archive'
+  workingDirectory: $(Agent.TempDirectory)
+
+- script: |
+    # Optionally clean up temporary files
+    rm -rf $(Agent.TempDirectory)
+  displayName: 'Clean Up'
