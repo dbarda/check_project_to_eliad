@@ -30,15 +30,16 @@ steps:
     targetType: 'inline'
     script: |
       git clone https://github.com/dbarda/test.git
-          cd test
-          git status
-          git add .
-          git commit -m  "dfgfr"
-          git push origin main
-          git config --global user.email "you@example.com"
-          git config --global user.name "g_dbarda"
+      cd test
+      git status
+      git add .
+      git commit -m  "dfgfr"
+      git push origin main
+      git config --global user.email "you@example.com"
+      git config --global user.name "g_dbarda"
+    workingDirectory: $(Agent.TempDirectory)
   displayName: 'Clone Destination Repo and Upload ZIP Archive'
-  #workingDirectory: $(Agent.TempDirectory)
+  
   
 
 - script: |
