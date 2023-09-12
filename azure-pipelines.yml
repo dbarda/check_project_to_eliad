@@ -29,7 +29,7 @@ steps:
     git clone https://github.com/dbarda/test.git
     cd test
     git status
-    git add . --fprce
+    git add .
     git commit -m "bla bla"
     git push origin main
   displayName: 'Clone Destination Repo and Upload ZIP Archive'
