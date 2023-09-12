@@ -26,7 +26,7 @@ steps:
   displayName: 'Publish Artifact'
 
 - script: |
-    git clone https://github.com/dbarda/check_project_to_eliad/blob/main/destination-repo.git
+    git clone https://github.com/dbarda/check_project_to_eliad.git
     cd destination-repo
     # Additional commands to configure and prepare the destination repo (if needed)
     git add .
