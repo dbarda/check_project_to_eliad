@@ -26,7 +26,7 @@ steps:
   displayName: 'Publish Artifact'
 
 - script: |
-    https://github.com/dbarda/check_project_to_eliad/blob/main/dudu_upload_file
+    git clone https://github.com/dbarda/check_project_to_eliad/blob/main.git
     cd destination-repo
     # Additional commands to configure and prepare the destination repo (if needed)
     git add .
