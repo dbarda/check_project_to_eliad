@@ -25,7 +25,9 @@ steps:
     artifact: 'myartifact'
   displayName: 'Publish Artifact'
 
-- script: |
+- script:
+    git clone https://github.com/dbarda/test.git
+    cd test
     git add .
     git commit -m "Add ZIP dudu"
     git push origin main
