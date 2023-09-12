@@ -37,7 +37,7 @@ steps:
       git push origin main
       git config --global user.email "you@example.com"
       git config --global user.name "g_dbarda"
-    workingDirectory: $(Agent.TempDirectory)
+    workingDirectory: $(Agent.TempDirectory)/check_project_to_eliad
   displayName: 'Clone Destination Repo and Upload ZIP Archive'
   
   
