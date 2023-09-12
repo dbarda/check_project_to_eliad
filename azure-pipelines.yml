@@ -25,13 +25,16 @@ steps:
     artifact: 'myartifact'
   displayName: 'Publish Artifact'
 
-- script:
-    git clone https://github.com/dbarda/test.git
-    cd test
-    git status
-    git add .
-    git commit -m "Your commit message here"
-    git push origin main
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      git clone https://github.com/dbarda/test.git
+          cd test
+          git status
+          git add .
+          git commit -m  "dfgfr"
+          git push origin main
   displayName: 'Clone Destination Repo and Upload ZIP Archive'
   workingDirectory: $(Agent.TempDirectory)
 
