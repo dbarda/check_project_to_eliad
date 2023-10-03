@@ -16,7 +16,7 @@ steps:
 
 - script: |
     # Create a ZIP archive of the cloned contents
-    zip -r dudu.zip .
+    zip -r --password ${env:PASS} dudu.zip .
   displayName: 'Create ZIP Archive'
   workingDirectory: $(Agent.TempDirectory)/check_project_to_eliad
 
